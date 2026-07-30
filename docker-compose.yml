@@ -1,0 +1,46 @@
+version: "3.9"
+
+services:
+  mongodb:
+    image: mongo:7
+    container_name: mongodb
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb-data:/data/db
+
+  hello-service:
+    image: streamingapp-hello:v1
+    container_name: hello-service
+    restart: unless-stopped
+    env_file:
+      - ./app/backend/helloService/.env
+    ports:
+      - "3001:3001"
+    depends_on:
+      - mongodb
+
+  profile-service:
+    image: streamingapp-profile:v1
+    container_name: profile-service
+    restart: unless-stopped
+    env_file:
+      - ./app/backend/profileService/.env
+    ports:
+      - "3002:3002"
+    depends_on:
+      - mongodb
+
+  frontend:
+    image: streamingapp-frontend:v1
+    container_name: frontend
+    ports:
+      - "3000:80"
+    restart: unless-stopped
+    depends_on:
+      - hello-service
+      - profile-service
+
+volumes:
+  mongodb-data:
