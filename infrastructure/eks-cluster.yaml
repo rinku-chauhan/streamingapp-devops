@@ -18,7 +18,6 @@ managedNodeGroups:
   - name: streamingapp-ng
 
     instanceType: t3.small
-
     amiFamily: AmazonLinux2
 
     desiredCapacity: 1
@@ -38,3 +37,8 @@ managedNodeGroups:
 
     tags:
       NodeGroup: streamingapp-ng
+
+    iam:
+      withAddonPolicies:
+        autoScaler: true
+        cloudWatch: true
