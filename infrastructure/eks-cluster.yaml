@@ -13,7 +13,7 @@ managedNodeGroups:
   - name: streamingapp-ng
 
     instanceType: t3.small
-    amiFamily: AmazonLinux2
+    amiFamily: AmazonLinux2023
 
     desiredCapacity: 1
     minSize: 1
