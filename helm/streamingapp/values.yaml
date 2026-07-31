@@ -1,0 +1,28 @@
+frontend:
+  image:
+    repository: 759530261212.dkr.ecr.ap-south-1.amazonaws.com/streamingapp-frontend
+    tag: "1"
+  service:
+    port: 80
+
+hello:
+  image:
+    repository: 759530261212.dkr.ecr.ap-south-1.amazonaws.com/streamingapp-hello
+    tag: "1"
+  service:
+    port: 3001
+
+profile:
+  image:
+    repository: 759530261212.dkr.ecr.ap-south-1.amazonaws.com/streamingapp-profile
+    tag: "1"
+  service:
+    port: 3002
+
+mongodb:
+  image:
+    repository: mongo
+    tag: "7"
+  service:
+    port: 27017
+  database: profiledb
