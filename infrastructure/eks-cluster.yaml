@@ -1,0 +1,40 @@
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+
+metadata:
+  name: streamingapp-cluster
+  region: ap-south-1
+  version: "1.33"
+
+tags:
+  Project: streamingapp-devops
+  Environment: learning
+  Owner: Rinku
+
+iam:
+  withOIDC: true
+
+managedNodeGroups:
+  - name: streamingapp-ng
+
+    instanceType: t3.small
+
+    amiFamily: AmazonLinux2
+
+    desiredCapacity: 1
+    minSize: 1
+    maxSize: 2
+
+    volumeType: gp3
+    volumeSize: 20
+
+    privateNetworking: false
+
+    ssh:
+      allow: true
+
+    labels:
+      role: worker
+
+    tags:
+      NodeGroup: streamingapp-ng
