@@ -1,0 +1,111 @@
+pipeline {
+    agent any
+
+    environment {
+        AWS_REGION = 'ap-south-1'
+        AWS_ACCOUNT_ID = '759530261212'
+
+        FRONTEND_REPO = 'streamingapp-frontend'
+        HELLO_REPO = 'streamingapp-hello'
+        PROFILE_REPO = 'streamingapp-profile'
+
+        IMAGE_TAG = "${env.BUILD_NUMBER}"
+    }
+
+    stages {
+
+        stage('Checkout Source') {
+            steps {
+                checkout scm
+            }
+        }
+
+        stage('Verify Tools') {
+            steps {
+                sh '''
+                    docker --version
+                    aws --version
+                    git --version
+                '''
+            }
+        }
+
+        stage('Login to Amazon ECR') {
+            steps {
+                sh '''
+                    aws ecr get-login-password --region $AWS_REGION | \
+                    docker login \
+                    --username AWS \
+                    --password-stdin $AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com
+                '''
+            }
+        }
+
+        stage('Build Frontend Image') {
+            steps {
+                sh '''
+                    docker build \
+                    -t $FRONTEND_REPO:$IMAGE_TAG \
+                    ./app/frontend
+                '''
+            }
+        }
+
+        stage('Build Hello Service Image') {
+            steps {
+                sh '''
+                    docker build \
+                    -t $HELLO_REPO:$IMAGE_TAG \
+                    ./app/backend/helloService
+                '''
+            }
+        }
+
+        stage('Build Profile Service Image') {
+            steps {
+                sh '''
+                    docker build \
+                    -t $PROFILE_REPO:$IMAGE_TAG \
+                    ./app/backend/profileService
+                '''
+            }
+        }
+
+        stage('Tag Images') {
+            steps {
+                sh '''
+                    docker tag $FRONTEND_REPO:$IMAGE_TAG \
+                    $AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/$FRONTEND_REPO:$IMAGE_TAG
+
+                    docker tag $HELLO_REPO:$IMAGE_TAG \
+                    $AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/$HELLO_REPO:$IMAGE_TAG
+
+                    docker tag $PROFILE_REPO:$IMAGE_TAG \
+                    $AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/$PROFILE_REPO:$IMAGE_TAG
+                '''
+            }
+        }
+
+        stage('Push Images to Amazon ECR') {
+            steps {
+                sh '''
+                    docker push $AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/$FRONTEND_REPO:$IMAGE_TAG
+
+                    docker push $AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/$HELLO_REPO:$IMAGE_TAG
+
+                    docker push $AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/$PROFILE_REPO:$IMAGE_TAG
+                '''
+            }
+        }
+    }
+
+    post {
+        success {
+            echo 'Pipeline completed successfully.'
+        }
+
+        failure {
+            echo 'Pipeline failed.'
+        }
+    }
+}
