@@ -24,9 +24,6 @@ managedNodeGroups:
 
     privateNetworking: false
 
-    ssh:
-      allow: true
-
     labels:
       role: worker
 
