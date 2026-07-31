@@ -6,11 +6,6 @@ metadata:
   region: ap-south-1
   version: "1.36"
 
-tags:
-  Project: streamingapp-devops
-  Environment: learning
-  Owner: Rinku
-
 iam:
   withOIDC: true
 
