@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🚀 StreamingApp DevOps CI/CD Pipeline on AWS
+# StreamingApp DevOps CI/CD Pipeline on AWS
 
 ### End-to-End CI/CD for a Containerized MERN Microservices Application using Jenkins, Docker, Amazon ECR, Amazon EKS, Helm & CloudWatch
 
@@ -21,30 +21,30 @@
 
 ---
 
-# 📑 Table of Contents
+# Table of Contents
 
-- [📖 Project Overview](#-project-overview)
-- [🏗️ Solution Architecture](#️-solution-architecture)
-- [🌟 Key Highlights](#-key-highlights)
-- [✨ Key Features](#-key-features)
-- [🛠️ Technology Stack](#️-technology-stack)
-- [📊 Project Metrics](#-project-metrics)
-- [📁 Project Structure](#-project-structure)
-- [⚙️ Prerequisites](#️-prerequisites)
-- [🚀 Project Setup](#-project-setup)
-- [🐳 Docker & Amazon ECR](#-docker--amazon-ecr)
-- [🔄 Jenkins CI/CD Pipeline](#-jenkins-cicd-pipeline)
-- [☸️ Amazon EKS & Helm Deployment](#️-amazon-eks--helm-deployment)
-- [📊 CloudWatch Monitoring](#-cloudwatch-monitoring)
-- [✅ Deployment Verification](#-deployment-verification)
-- [📸 Project Screenshots](#-project-screenshots)
-- [🔧 Troubleshooting](#-troubleshooting)
-- [🚀 Future Improvements](#-future-improvements)
-- [👨‍💻 Author](#-author)
+- [Project Overview](#-project-overview)
+- [Solution Architecture](#️-solution-architecture)
+- [Key Highlights](#-key-highlights)
+- [Key Features](#-key-features)
+- [Technology Stack](#️-technology-stack)
+- [Project Metrics](#-project-metrics)
+- [Project Structure](#-project-structure)
+- [Prerequisites](#️-prerequisites)
+- [Project Setup](#-project-setup)
+- [Docker & Amazon ECR](#-docker--amazon-ecr)
+- [Jenkins CI/CD Pipeline](#-jenkins-cicd-pipeline)
+- [Amazon EKS & Helm Deployment](#️-amazon-eks--helm-deployment)
+- [CloudWatch Monitoring](#-cloudwatch-monitoring)
+- [Deployment Verification](#-deployment-verification)
+- [Project Screenshots](#-project-screenshots)
+- [Troubleshooting](#-troubleshooting)
+- [Future Improvements](#-future-improvements)
+- [Author](#-author)
 
 ---
 
-# 📖 Project Overview
+# Project Overview
 
 This project demonstrates an end-to-end DevOps implementation for deploying a containerized MERN microservices application on **Amazon Elastic Kubernetes Service (EKS)**.
 
@@ -52,7 +52,7 @@ The solution automates the software delivery lifecycle using **Jenkins**, **Dock
 
 ---
 
-# 🏗️ Solution Architecture
+# Solution Architecture
 
 > **Note:** Replace the ASCII diagram below with a professional architecture diagram (`assets/architecture.png`) for a stronger portfolio presentation.
 
@@ -91,20 +91,20 @@ The solution automates the software delivery lifecycle using **Jenkins**, **Dock
 
 ---
 
-# 🌟 Key Highlights
+# Key Highlights
 
-- 🚀 Automated CI/CD pipeline using Jenkins
-- 🐳 Dockerized MERN microservices architecture
-- 📦 Private container registry using Amazon ECR
-- ☸️ Kubernetes deployment on Amazon EKS
-- 📋 Helm-based Kubernetes package management
-- 📈 Infrastructure monitoring with Amazon CloudWatch
-- 🔐 Secure AWS authentication using IAM Roles
-- ☁️ Cloud-native deployment on AWS
+- Automated CI/CD pipeline using Jenkins
+- Dockerized MERN microservices architecture
+- Private container registry using Amazon ECR
+- Kubernetes deployment on Amazon EKS
+- Helm-based Kubernetes package management
+- Infrastructure monitoring with Amazon CloudWatch
+- Secure AWS authentication using IAM Roles
+- Cloud-native deployment on AWS
 
 ---
 
-# ✨ Key Features
+# Key Features
 
 ### CI/CD
 
@@ -135,7 +135,7 @@ The solution automates the software delivery lifecycle using **Jenkins**, **Dock
 
 ---
 
-# 🛠️ Technology Stack
+# Technology Stack
 
 | Category | Technologies |
 |-----------|--------------|
@@ -147,7 +147,7 @@ The solution automates the software delivery lifecycle using **Jenkins**, **Dock
 
 ---
 
-# 📊 Project Metrics
+# Project Metrics
 
 | Metric | Value |
 |---------|------:|
@@ -162,7 +162,7 @@ The solution automates the software delivery lifecycle using **Jenkins**, **Dock
 | Cloud Provider | AWS |
 
 ---
-# 📁 Project Structure
+# Project Structure
 
 ```text
 streamingapp-devops/
@@ -193,7 +193,7 @@ streamingapp-devops/
 
 ---
 
-# ⚙️ Prerequisites
+# Prerequisites
 
 ## Software
 
@@ -226,7 +226,7 @@ The Jenkins EC2 instance uses an **IAM Role** for AWS authentication, allowing s
 
 ---
 
-# 🚀 Project Setup
+# Project Setup
 
 ## Clone the Repository
 
@@ -260,7 +260,7 @@ docker compose down
 
 ---
 
-# 🐳 Docker & Amazon ECR
+# Docker & Amazon ECR
 
 Each application component is containerized using Docker.
 
@@ -367,7 +367,7 @@ Ready for Kubernetes Deployment
 
 The Jenkins pipeline automates the complete container build process, ensuring that every successful code change results in updated Docker images stored in Amazon ECR, ready for deployment to Amazon EKS.
 ---
-# ☸️ Amazon Elastic Kubernetes Service (EKS)
+# Amazon Elastic Kubernetes Service (EKS)
 
 After successfully publishing Docker images to Amazon ECR, the application is deployed to a managed Kubernetes cluster using **Amazon Elastic Kubernetes Service (EKS)**.
 
@@ -395,7 +395,7 @@ infrastructure/
 
 ---
 
-# 📦 Helm Deployment
+# Helm Deployment
 
 The Kubernetes application is packaged using **Helm**, enabling consistent, repeatable, and version-controlled deployments.
 
@@ -442,7 +442,7 @@ helm list
 
 ---
 
-# ☸️ Kubernetes Resources
+# Kubernetes Resources
 
 After the Helm deployment, Kubernetes automatically creates and manages the required resources.
 
@@ -482,7 +482,7 @@ After the Helm deployment, Kubernetes automatically creates and manages the requ
 
 ---
 
-# 📊 CloudWatch Monitoring
+# CloudWatch Monitoring
 
 Amazon CloudWatch is used to monitor the Kubernetes infrastructure.
 
@@ -511,7 +511,7 @@ The CPU alarm monitors the EKS worker node and can be extended with SNS notifica
 
 ---
 
-# ✅ Deployment Verification
+# Deployment Verification
 
 The following commands were used to validate the deployment.
 
@@ -565,7 +565,7 @@ The application was successfully deployed and verified on Amazon EKS.
 
 ✔ Kubernetes Resources Validated
 ---
-# 📸 Project Screenshots
+# Project Screenshots
 
 The following screenshots highlight the major milestones of the project.
 
@@ -586,7 +586,7 @@ The following screenshots highlight the major milestones of the project.
 
 ---
 
-# 🔧 Troubleshooting
+# Troubleshooting
 
 During implementation, several common DevOps challenges were encountered and resolved.
 
@@ -601,7 +601,7 @@ During implementation, several common DevOps challenges were encountered and res
 
 ---
 
-# 🚀 Future Improvements
+# Future Improvements
 
 Possible enhancements for a production-ready deployment include:
 
@@ -618,7 +618,7 @@ Possible enhancements for a production-ready deployment include:
 
 ---
 
-# 📚 Learning Outcomes
+# Learning Outcomes
 
 This project provided hands-on experience with modern DevOps and cloud-native technologies, including:
 
@@ -634,14 +634,11 @@ This project provided hands-on experience with modern DevOps and cloud-native te
 
 ---
 
-# 👨‍💻 Author
+# Author
 
 **Rinku Chauhan**
 
-**Senior System Engineer | DevOps & Cloud Engineering Enthusiast**
-
-- 💼 LinkedIn: https://linkedin.com/in/rinku-chauhan
-- 💻 GitHub: https://github.com/rinku-chauhan
+- LinkedIn: https://linkedin.com/in/rinku-chauhan
 
 ---
 
@@ -650,14 +647,6 @@ This project provided hands-on experience with modern DevOps and cloud-native te
 This project is licensed under the **MIT License**.
 
 See the [LICENSE](LICENSE) file for more details.
-
----
-
-# 🙏 Acknowledgements
-
-This project was developed as part of the **Hero Vired Postgraduate Program in Multi-Cloud Architecture & DevOps**.
-
-Special thanks to the instructors, mentors, and the open-source community for providing the knowledge, tools, and technologies that made this project possible.
 
 ---
 
