@@ -4,7 +4,7 @@ kind: ClusterConfig
 metadata:
   name: streamingapp-cluster
   region: ap-south-1
-  version: "1.33"
+  version: "1.36"
 
 tags:
   Project: streamingapp-devops
