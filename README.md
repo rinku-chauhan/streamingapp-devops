@@ -57,11 +57,11 @@ The solution automates the software delivery lifecycle using **Jenkins**, **Dock
 The following diagram illustrates the end-to-end DevOps workflow, from source code commit to application deployment and monitoring on AWS.
 
 <p align="center">
-  <img src="assets/architecture.png"
-       alt="StreamingApp DevOps Architecture"
-       width="100%">
+  <img
+    src="assets/architecture/architecture.png"
+    alt="StreamingApp DevOps Architecture"
+    width="100%">
 </p>
-```
 
 ---
 
