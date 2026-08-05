@@ -54,39 +54,13 @@ The solution automates the software delivery lifecycle using **Jenkins**, **Dock
 
 # Solution Architecture
 
-> **Note:** Replace the ASCII diagram below with a professional architecture diagram (`assets/architecture.png`) for a stronger portfolio presentation.
+The following diagram illustrates the end-to-end DevOps workflow, from source code commit to application deployment and monitoring on AWS.
 
-```text
-                 Developer
-                      │
-                Git Push
-                      │
-                      ▼
-             GitHub Repository
-                      │
-                      ▼
-             Jenkins CI/CD Pipeline
-                      │
-          Build Docker Images
-                      │
-                      ▼
-              Amazon ECR
-                      │
-          Pull Container Images
-                      ▼
-          Amazon EKS Cluster
-                      │
-             Helm Deployment
-                      │
-      ┌───────────────┼───────────────┐
-      ▼               ▼               ▼
- Frontend        Hello Service   Profile Service
-                      │
-                      ▼
-                   MongoDB
-                      │
-                      ▼
-          Amazon CloudWatch
+<p align="center">
+  <img src="assets/architecture.png"
+       alt="StreamingApp DevOps Architecture"
+       width="100%">
+</p>
 ```
 
 ---
