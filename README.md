@@ -21,29 +21,6 @@
 
 ---
 
-# Table of Contents
-
-- [Project Overview](#-project-overview)
-- [Solution Architecture](#️-solution-architecture)
-- [Key Highlights](#-key-highlights)
-- [Key Features](#-key-features)
-- [Technology Stack](#️-technology-stack)
-- [Project Metrics](#-project-metrics)
-- [Project Structure](#-project-structure)
-- [Prerequisites](#️-prerequisites)
-- [Project Setup](#-project-setup)
-- [Docker & Amazon ECR](#-docker--amazon-ecr)
-- [Jenkins CI/CD Pipeline](#-jenkins-cicd-pipeline)
-- [Amazon EKS & Helm Deployment](#️-amazon-eks--helm-deployment)
-- [CloudWatch Monitoring](#-cloudwatch-monitoring)
-- [Deployment Verification](#-deployment-verification)
-- [Project Screenshots](#-project-screenshots)
-- [Troubleshooting](#-troubleshooting)
-- [Future Improvements](#-future-improvements)
-- [Author](#-author)
-
----
-
 # Project Overview
 
 This project demonstrates an end-to-end DevOps implementation for deploying a containerized MERN microservices application on **Amazon Elastic Kubernetes Service (EKS)**.
@@ -158,7 +135,9 @@ streamingapp-devops/
 │
 ├── docs/
 ├── assets/
-│   └── screenshots/
+│   ├── architecture/
+│   │   └── architecture.png
+│   └── screenshots
 │
 ├── docker-compose.yml
 ├── LICENSE
@@ -538,25 +517,11 @@ The application was successfully deployed and verified on Amazon EKS.
 ✔ CloudWatch Monitoring Configured
 
 ✔ Kubernetes Resources Validated
+
 ---
 # Project Screenshots
 
-The following screenshots highlight the major milestones of the project.
-
-| Stage | Screenshot |
-|--------|------------|
-| StreamingApp User Interface | ![](assets/screenshots/05-react-application-running.png) |
-| Docker Images | ![](assets/screenshots/06-docker-images-built.png) |
-| Docker Compose | ![](assets/screenshots/08-docker-compose-application.png) |
-| Amazon ECR Repositories | ![](assets/screenshots/09-ecr-private-repositories.png) |
-| Jenkins Dashboard | ![](assets/screenshots/13-jenkins-dashboard.png) |
-| Successful Jenkins Pipeline | ![](assets/screenshots/18-jenkins-pipeline-success.png) |
-| Amazon EKS Cluster | ![](assets/screenshots/21-eks-cluster-ready.png) |
-| Helm Deployment | ![](assets/screenshots/23-helm-install-success.png) |
-| Kubernetes Resources | ![](assets/screenshots/29-kubernetes-all-resources.png) |
-| CloudWatch Monitoring | ![](assets/screenshots/27-cloudwatch-cpu-alarm-created.png) |
-
-> **Note:** Additional implementation screenshots are available in the `assets/screenshots` directory.
+> **Note:** Only the most significant screenshots are embedded in this README to maintain readability. A complete visual walkthrough of the project is available in the `assets/screenshots` folder.
 
 ---
 
